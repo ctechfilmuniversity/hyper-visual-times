@@ -4,12 +4,17 @@ import visualMentionsNYT from '../../content/data/images/visual_mentions_per_per
 import visualMentionsZeit from '../../content/data/images/visual_mentions_per_person_and_week_zeit.json';
 import coappearanceNYT from '../../content/data/images/visual_coappearance_nyt.json';
 import coappearanceZeit from '../../content/data/images/visual_coappearance_zeit.json';
+import { createClient } from '@supabase/supabase-js'
+import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_PUBLIC_KEY } from '$env/static/public';
+    
+export const supabase = createClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_PUBLIC_KEY);
 export const currentView = writable<'bubblechart' | 'streamgraph'>('streamgraph');
 export const selectedOutlet = writable<'NYT' | 'Zeit'>('NYT');
 export const currentVisualMentionsDataset = writable<any>(visualMentionsNYT);
 export const currentCoappearanceDataset = writable<any>(coappearanceNYT);
 export const currentColorDefault = writable<string>('var(--color-nyt-default)');
 export const currentColorLight = writable<string>('var(--color-nyt-light)');
+// Create a single supabase client for interacting with your database
 const newsDesksNYT = ["Politics",
 "Washington",
 "OpEd",

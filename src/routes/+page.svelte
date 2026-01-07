@@ -13,6 +13,7 @@
 	import { onMount } from 'svelte';
 	import { getArticles } from '$lib/utils/request.svelte.ts';
 
+
 	// init scroller for scrollytelling
 	const scroller = scrollama();
 	let step = $state(0);
@@ -26,6 +27,7 @@
 	let data = $state<any>(null);
 	onMount(async () => {
 		await fetchData(0);
+
 	});
 	async function fetchData(numberOfTries) {
 		try {
@@ -35,7 +37,6 @@
 				'2024-01-229968742',
 				'2024-01-230174863'
 			]);
-			await new Promise((resolve) => setTimeout(resolve, 100)); // needed to avoid rate limiting
 			let randomNYTSelection = await getArticles('nyt', [
 				'nyt://article/007aece2-7926-5653-9d0c-2221b9f363b2',
 				'nyt://article/007afda5-8628-520a-9dc0-0c4c30697599',
