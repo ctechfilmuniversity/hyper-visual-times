@@ -443,7 +443,7 @@
 		<div class="flex items-start justify-start gap-2"></div>
 	</div>
 {/snippet}
-<div class="grid h-full w-full grid-cols-9" bind:clientWidth={width} bind:clientHeight={height}>
+<div class="grid h-3/4 w-full grid-cols-9" bind:clientWidth={width} bind:clientHeight={height}>
 	<svg class="col-span-6" width={widthDerived} {height} id="network-graph"> </svg>
 	<div class="col-span-3 flex flex-col items-center gap-4 p-6">
 		<OutletSelector/>
