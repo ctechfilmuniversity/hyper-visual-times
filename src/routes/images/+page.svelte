@@ -68,8 +68,11 @@
 {/snippet}
 <div class="base m-auto w-11/12 pt-20" class:opacity-0={!true} class:opacity-100={true}>
 	<div id="images-essay">
-		<video id="intro-video" class="relative z-10 opacity-0" src={LinkHandler("/img/images_teaser_desktop.webm")} muted loop
+		<div class="h-[90vh] grid items-center justify-items-center">
+					<video id="intro-video" class="relative z-10 opacity-0" src={LinkHandler("/img/images_teaser_desktop.webm")} muted loop
 		></video>
+		</div>
+
 		<section id="intro" class="mb-30">
 			<div class="m-auto w-full md:w-3/7">
 				<BlocksRenderer rawtext={rawIntroText} />

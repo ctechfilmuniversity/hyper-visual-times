@@ -25,7 +25,7 @@
 			<div class="grid h-full grid-cols-4 md:grid-cols-10 xl:grid-cols-12 2xl:grid-cols-18">
 				{#each NYTSelectionBasedOnW as article, a}
 					<div
-						class={` border-ivory-dark/20 ${colClasses[a]} ${a === NYTSelectionBasedOnW.length - 1 ? 'border-r border-l' : 'border-l'}`}
+						class={`${colClasses[a]}}`}
 					></div>
 				{/each}
 			</div>

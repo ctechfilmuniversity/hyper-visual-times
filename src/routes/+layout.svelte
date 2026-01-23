@@ -46,9 +46,9 @@
 {#if navigating.to}
 	<div class="h-full"><Load /></div>
 {:else}
-	<div class={`${navigating.to ? 'hidden' : ''} m-auto w-full max-w-7xl lg:border-x`}>
+	<div class={`${navigating.to ? 'hidden' : ''} m-auto w-full max-w-7xl`}>
 		<div class="sticky top-0 z-50 mx-2">
-			<nav class="bg-ivory-default absolute w-full border-b p-4">
+			<nav class="bg-ivory-default absolute w-full p-4">
 				<div class="m-auto flex items-center justify-between">
 					<div class="w-2/3">
 						<a href={LinkHandler('/')} data-sveltekit-preload-data="hover">
