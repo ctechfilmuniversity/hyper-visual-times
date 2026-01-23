@@ -45,8 +45,8 @@
 			]);
 			console.log(randomNYTSelection, randomZeitSelection);
 			data = {
-				randomZeitSelection: randomZeitSelection.data,
-				randomNYTSelection: randomNYTSelection.data
+				randomZeitSelection: randomZeitSelection?.data ?? [],
+				randomNYTSelection: randomNYTSelection?.data ?? []
 			};
 		} catch (error) {
 			console.error(`Error fetching data:${error}, try: ${numberOfTries}`);
@@ -54,6 +54,13 @@
 				await new Promise((resolve) => setTimeout(resolve, 500)); // wait before retrying
 				await fetchData(numberOfTries + 1);
 			}
+		}
+		if (data.randomNYTSelection.length < 4 || data.randomZeitSelection.length < 4) {
+			if (numberOfTries < 2) {
+				await new Promise((resolve) => setTimeout(resolve, 100)); // wait before retrying
+				await fetchData(numberOfTries + 1);
+			}
+
 		}
 	}
 	// trigger initial scroll on button click
